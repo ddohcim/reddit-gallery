@@ -1,0 +1,14 @@
+<header>
+    <img src="assets/images/header.png" alt="header">
+    <div class="container">
+        <h1>Reddit subreddits gallery</h1>
+        <ul class="nav">
+            <li *ngFor="let link of linksData">
+                <a [attr.data-subreddit-name]="link.name" [attr.data-subreddit-data]="link.url"
+                    (click)="onLoadSubreddit(link.url)">
+                    {{ link.name }}
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
