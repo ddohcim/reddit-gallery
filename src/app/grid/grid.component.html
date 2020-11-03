@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let url of imagesData?.data.children">
+        <img *ngIf="url.data.url.includes('jpg') || url.data.url.includes('jpeg') || url.data.url.includes('png') || url.data.url.includes('gif')"
+            [src]="url.data.url">
+    </li>
+</ul>
