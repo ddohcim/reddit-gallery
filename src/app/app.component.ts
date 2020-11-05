@@ -41,7 +41,7 @@ export interface SubredditData {
 })
 export class AppComponent implements OnInit {
   linksData: Array<object>
-  subredditData$: Observable<SubredditData> | Observable<Object>;
+  // subredditData$: Observable<SubredditData> | Observable<Object>;
 
   constructor(private imagesService: ImageDataService, private http: HttpClient) { }
 
@@ -49,7 +49,7 @@ export class AppComponent implements OnInit {
     this.linksData = this.imagesService.subredditsData;
   }
 
-  onLoadSubreddit(url: string) {
-    this.subredditData$ = this.imagesService.loadSubredditData(url);
-  }
+  // onLoadSubreddit(url: string) {
+  //   this.subredditData$ = this.imagesService.loadSubredditData(url);
+  // }
 }

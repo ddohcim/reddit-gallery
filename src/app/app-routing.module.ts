@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
+import { GridComponent } from './grid/grid.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   {
-    path: 'user', component: , children: [
-      { path: ':name', component:  }
-    ]
+    path: ':type/:name', component: GridComponent
   }
 ];
 

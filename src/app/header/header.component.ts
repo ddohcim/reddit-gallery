@@ -7,7 +7,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   @Input() linksData;
-  @Output() loadSubredditRequested = new EventEmitter<string>();
+  subredditType = 'subreddit'
+
+  // @Output() loadSubredditRequested = new EventEmitter<string>();
   private headerImage = "./header.PNG";
 
   constructor() { }
@@ -15,8 +17,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onLoadSubreddit(url: string) {
-    this.loadSubredditRequested.emit(url);
-  }
+  // onLoadSubreddit(url: string) {
+  //   this.loadSubredditRequested.emit(url);
+  // }
 
 }

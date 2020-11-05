@@ -36,7 +36,13 @@ export class ImageDataService {
     })
   }
 
-  loadSubredditData(url: string): Observable<SubredditData> | Observable<object> {
-    return this.http.get(url);
+  loadSubredditData(type: string, name: string): Observable<SubredditData> | Observable<object> {
+    if (type === 'subreddit') {
+      return this.http.get(`https://www.reddit.com/r/${name}/top/.json?t=week&limit=100`);
+    }
+    else if (type === 'user') {
+      return this.http.get(`https://gateway.reddit.com/desktopapi/v1/user/${name}/posts?rtj=only&allow_quarantined=true&allow_over18=1&include=identity&t=all&layout=classic&sort=top&limit=100`)
+    }
+
   }
 }
