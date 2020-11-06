@@ -9,18 +9,16 @@ import { ImageDataService } from '../image-data.service';
   styleUrls: ['./grid.component.scss']
 })
 export class GridComponent implements OnInit {
-
-  userName = ''
-  imagesData$: Observable<any>;
   imagesData = [];
 
   constructor(private route: ActivatedRoute, private imageService: ImageDataService) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.imagesData$ = this.imageService.loadSubredditData(params.type, params.name)
+      console.log('route.params z grid.component', params);
+      this.imagesData = [];
 
-      this.imagesData$.subscribe(data => {
+      this.imageService.loadSubredditData(params.type, params.name).subscribe(data => {
         if (data.data) {
           this.imagesData = data.data.children.map(post => {
             return {
@@ -47,8 +45,7 @@ export class GridComponent implements OnInit {
 
 
         console.log('this.imagesData', this.imagesData)
-      },
-        error => console.log(error))
+      })
     })
   }
 

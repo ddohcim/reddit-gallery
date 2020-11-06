@@ -1,9 +1,5 @@
 <div class="container">
-    <app-header [linksData]="linksData">
-        <!-- <app-header [linksData]="linksData" (loadSubredditRequested)="onLoadSubreddit($event)"> -->
-    </app-header>
-    <!-- <button [routerLink]="['user', 'oheytherehellohi']">load user oheytherehellohi data</button> -->
+    <app-header [linksData]="linksData"></app-header>
 
-    <!-- <app-grid [imagesData]="subredditData$ | async"></app-grid> -->
     <router-outlet></router-outlet>
 </div>

@@ -4,10 +4,8 @@ import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
-  {
-    path: ':type/:name', component: GridComponent
-  }
+  { path: '', component: AppComponent, pathMatch: 'full' },
+  { path: ':type/:name', component: GridComponent }
 ];
 
 @NgModule({
