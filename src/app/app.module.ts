@@ -6,18 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { GridComponent } from './grid/grid.component';
-import { SubredditGalleryComponent } from './subreddit-gallery/subreddit-gallery.component';
-import { UserGalleryComponent } from './user-gallery/user-gallery.component';
-import { GridStartComponent } from './grid/grid-start/grid-start.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    GridComponent,
-    SubredditGalleryComponent,
-    UserGalleryComponent,
-    GridStartComponent
+    GridComponent
   ],
   imports: [
     BrowserModule,

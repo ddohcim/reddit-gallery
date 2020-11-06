@@ -1,6 +1,18 @@
-<ul>
-    <li *ngFor="let url of imagesData?.data.children">
-        <img *ngIf="url.data.url.includes('jpg') || url.data.url.includes('jpeg') || url.data.url.includes('png') || url.data.url.includes('gif')"
-            [src]="url.data.url">
+<!-- <h1>jaka zawartosc: {{ imagesData }}</h1> -->
+<!-- <ul *ngIf="imagesData">
+    <li *ngFor="let post of imagesData">
+        <img *ngIf="post.imgUrl.includes('jpg') || post.imgUrl.includes('jpeg') || post.imgUrl.includes('png') || post.imgUrl.includes('gif')"
+            [src]="post.imgUrl">
+        <a [routerLink]="['/user', post.author]">{{ post.author }}</a>
     </li>
-</ul>
+</ul> -->
+<div *ngIf="imagesData.length; else noImagesData">
+    <div *ngFor="let post of imagesData" class="post">
+        <p>{{ post.author }}</p>
+        <p>{{ post.imgUrl }}</p>
+    </div>
+</div>
+
+<ng-template #noImagesData>
+    <p>Loading data...</p>
+</ng-template>
