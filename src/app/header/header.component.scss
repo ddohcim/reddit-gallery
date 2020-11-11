@@ -1,10 +1,17 @@
 header {
     display: flex;
-    position: sticky;
-    margin-bottom: 40px;
+    flex-direction: column;
+    position: sticky;    
+
+    @media (min-width: 641px) {
+        flex-direction: row;
+        padding-bottom: 24px;
+    }
 
     img {
+        cursor: pointer;
         max-height: 200px;
+        align-self: flex-start;
     }
 }
 
@@ -12,14 +19,27 @@ h1 {
     margin-bottom: 8px;
 }
 
+.wrapper {
+    margin: 24px 0;
+
+    @media (min-width: 641px) {
+        margin: 0 0 0 24px;
+    }
+}
+
 .nav {
     display: flex;
     list-style-type: none;
-    margin: 0 0 40px 0;
+    margin: 0 0 24px 0;
     padding: 0;
+
+    @media (min-width: 641px) {
+        margin: 0 0 40px 0;
+    }
 
     li {
         margin-right: 8px;
+        padding: 0 4px;
         
         &:last-of-type {
             margin-right: 0;
@@ -28,6 +48,15 @@ h1 {
         &:hover {
             text-decoration: underline;
             cursor: pointer;
+        }
+    }
+
+    a {
+        color: #4c8bf5;
+
+        &.active {
+            color: #1e389f;
+            text-decoration: underline;
         }
     }
 }

@@ -7,7 +7,7 @@ import { ImageDataService } from './image-data.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  linksData: Array<object>
+  linksData: Array<object>;
   // subredditData$: Observable<SubredditData> | Observable<Object>;
 
   constructor(private imagesService: ImageDataService) {
