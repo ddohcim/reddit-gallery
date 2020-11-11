@@ -49,20 +49,6 @@ export interface UserData {
   providedIn: 'root'
 })
 export class ImageDataService {
-  // subreddits = [
-  //   '18_19',
-  //   'LegalTeens',
-  //   'CollegeSluts',
-  //   'NSFW',
-  //   'RealGirls',
-  //   'BustyPetite',
-  //   'HoldTheMoan',
-  //   'PetiteGoneWild',
-  //   'AsiansGoneWild',
-  //   'BiggerThanYouThought',
-  //   'OnOff',
-  //   'GodPussy'
-  // ];
   subreddits = [
     'OldschoolCool',
     'TheWayWeWere',
