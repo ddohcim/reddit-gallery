@@ -6,13 +6,18 @@
         <a [routerLink]="['/user', post.author]">{{ post.author }}</a>
     </li>
 </ul> -->
+
 <div *ngIf="imagesData.length; else noImagesData">
-    <div *ngFor="let post of imagesData" class="post">
-        <p>{{ post.author }}</p>
-        <p>{{ post.imgUrl }}</p>
-    </div>
+    <ul class="posts-list">
+        <li class="post" *ngFor="let post of imagesData">
+            <img class="thumbnail" [src]="post.thumbUrl" alt="image" (click)="onImageClick(post.imgUrl)">
+            <div class="author" [routerLink]="['/user', post.author]">
+                <span>{{ post.author }}</span>
+            </div>
+        </li>
+    </ul>
 </div>
 
 <ng-template #noImagesData>
-    <p>Loading data...</p>
+    <p>{{ noDataText }}</p>
 </ng-template>
